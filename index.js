@@ -9,8 +9,20 @@ const puppeteer = require("puppeteer");
     await page.type("#identifierId", "n140995@rguktn.ac.in");
     await page.click(".VfPpkd-vQzf8d");
     //Password
-    await page.waitForSelector('.Xb9hP.input');
-    await page.type('.Xb9hP.input', "Jenny@bib11");
+    await page.waitForSelector('.Xb9hP');
+    await page.type('.Xb9hP input', "Jenny@bib11");
     await page.click(".VfPpkd-vQzf8d");
+    // await page.click(".VfPpkd-LgbsSe.VfPpkd-LgbsSe-OWXEXe-k8QpJ.VfPpkd-LgbsSe-OWXEXe-dgl2Hf.nCP5yc.AjY5Oe.DuMIQc.qIypjc.TrZEUc.lw1w4b");
+    const fetchData = await page.evaluate(() => {
+        const inboxData = [];
+        const inbox = document.querySelectorAll(".afn");
+        inbox.forEach((element) => {
+            inboxData.push(element.innerHTML);
+        })
+        return inboxData;
+    })
+    console.log("fetchData", fetchData);
+    //Logout
+    await page.click("#gb_71");
     await browser.close();
 })
