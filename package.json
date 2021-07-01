@@ -1,0 +1,15 @@
+{
+  "name": "way2online_task2",
+  "version": "1.0.0",
+  "description": "WebCrawling Using Pupeeter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Abib Mishael P",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^10.1.0"
+  }
+}
